@@ -44,10 +44,11 @@
     }
 
     &__list {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
+        // position: absolute;
+        // top: 50%;
+        // left: 50%;
+        // transform: translate(-50%,-50%);
+        @include absCenter;
         list-style: none;
         text-align: center;
         width: 100%;
@@ -100,7 +101,7 @@
     //ICON
     &__icon {
         position: relative;
-        margin-top: 3.5rem;
+        margin-top: 3.4rem;
 
         &,
         &::before,
@@ -131,6 +132,7 @@
         top: 1rem;
     }
 
+    // when checkbox is checked select adjacent sibling's child
     &__checkbox:checked + &__button &__icon {
         background-color: transparent;
     }
