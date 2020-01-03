@@ -29,6 +29,8 @@ $breakpoint argument choices:
 - tab-port
 - tab-land
 - big-desktop
+
+ORDER: Base + typography > general layout + dgrid > page layout > components
 */
 
 // em (1em = 16px) is best option for media queries, not rem. works for people who change their default sizes on their browsers
@@ -44,6 +46,10 @@ $breakpoint argument choices:
 
     @if $breakpoint == tab-land {
         @media (max-width: 75em) { @content };  // 1200px/16
+    }
+
+    @if $breakpoint == desktop {
+        @media (max-width: 93.75em) { @content };  // 1500px/16
     }
 
     @if $breakpoint == big-desktop {

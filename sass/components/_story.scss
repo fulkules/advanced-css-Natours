@@ -5,10 +5,20 @@
     background-color: rgba($color-white, .6);
     border-radius: 3px;
     padding: 6rem;
-    // left needs an offset from the float and trnasform properties 6 + 3
+    // left needs an offset from the float and transform properties 6 + 3
     padding-left: 9rem;
     font-size: $default-font-size;
     transform: skewX(-12deg);
+
+    @include respond(tab-port) {
+        width: 100%;
+        padding: 4rem;
+        padding-left: 7rem;
+    }
+
+    @include respond(phone) {
+        transform: skewX(0);
+    }
 
     &__shape {
         width: 15rem;
@@ -24,6 +34,10 @@
         // messing with position around floated elements should use transform
         transform: translateX(-3rem) skewX(12deg);
         position: relative;
+
+        @include respond(phone) {
+            transform: translateX(-3rem) skewX(0);
+        }
     }
 
     &__img {
@@ -36,6 +50,10 @@
 
     &__text {
         transform: skewX(12deg);
+
+        @include respond(phone) {
+            transform: skewX(0);
+        }
     }
 
     &__caption {
